@@ -1,5 +1,5 @@
 // Client Side Javascript
-console.log('client side javascript file is loaded.')
+
 
 // fetch API is not accessible by nodeJS. therefore it cannot be used backend.
 
