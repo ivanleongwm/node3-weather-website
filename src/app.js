@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express() //express app doesn't take in args, it uses methods.
+const port = process.env.PORT || 3000
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -115,9 +116,9 @@ app.get('*', (req, res) => {   //* --> match anything that hasn't been matched b
     })
 })
 
-app.listen(3000, () => {  // starts up a server and has it listen on a specific port.
-    console.log('Server is up on port 3000.')
-})
+app.listen(port, () => {  // starts up a server and has it listen on a specific port.
+    console.log(`Server is up on port ${port}.`)
+}) //have to use port value provided by heroku from environment level
 
 
 // CLI for nodemon to watch hbs files as well.

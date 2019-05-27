@@ -20,7 +20,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => { //string URL we are trying to fetch from: async
+    fetch('/weather?address=' + location).then((response) => { //string URL we are trying to fetch from: async   //make sure to make the weather request without the local host.
         response.json().then((data) => {
             if (data.error) {
                 messageOne.textContent = data.error
